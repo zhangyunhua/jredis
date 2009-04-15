@@ -97,10 +97,10 @@ Any `java.lang.String` value that does *not* contain \r, \n, and space.  Other t
 
 {{{
 			String asciiKey = "ascii-key";
-			String utf8key_russian = "фывапро";
-			String utf8key_chinese = "漢字[汉字]";
+			String utf8key_Russian = "фывапро";
+			String utf8key_Chinese = "漢字[汉字]";
 												String utf8key_Persian = "مهندس";
-			String variousKeys[] = {asciiKey, utf8key_russian, utf8key_chinese, utf8key_Persian};
+			String variousKeys[] = {asciiKey, utf8key_Russian, utf8key_Chinese, utf8key_Persian};
 			String value = "some data";
 			
 			for(String key : variousKeys){
