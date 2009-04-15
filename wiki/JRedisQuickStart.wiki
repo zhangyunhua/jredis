@@ -151,7 +151,7 @@ Here is how:
 
 *And how do I get my values back to proper types*?
 
-So, to repeat, Redis treats values as blobs, just `byte[]'s, so JRedis api reflects that and returns either `byte[]` or `List<byte[]>` (for set and list ops).   
+So, to repeat, Redis treats values as blobs, just `byte[]`s, so JRedis api reflects that and returns either `byte[]` or `List<byte[]>` (for set and list ops).   
 
 So, to help out there is (as of r16 but this will be improved so remember this bit is in flux), `Encode`.
 
