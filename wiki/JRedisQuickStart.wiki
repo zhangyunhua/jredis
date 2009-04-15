@@ -55,16 +55,16 @@ public class HelloAgain {
 			
 			System.out.format("%s\n", msg);
 		}
-		catch (RedisException e){
-			if (e.getCommand()==Command.PING){
+		catch (RedisException error){
+			if (error.getCommand()==Command.PING){
 				System.out.format("I'll need that password!  Try again with password as command line arg for this program.\n");
 			}
 		}
-		catch (ProviderException e){
-			System.out.format("Oh no, an 'un-documented feature':  %s\nKindly report it.", e.getMessage());
+		catch (ProviderException bug){
+			System.out.format("Oh no, an 'un-documented feature':  %s\nKindly report it.", bug.getMessage());
 		}
-		catch (ClientRuntimeException e){
-			System.out.format("%s\n", e.getMessage());
+		catch (ClientRuntimeException problem){
+			System.out.format("%s\n", problem.getMessage());
 		}
 	}
 }
