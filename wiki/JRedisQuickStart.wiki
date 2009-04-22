@@ -7,7 +7,11 @@ So how do you use JRedis?  Pull the code (r16) or download from [http://github.c
 
 = Details =
 
-JRedis is a specification and a reference implementation.  Currently there is one implementation providing (blocking semantics on method calls) for a passive client (that uses the caller's thread to do its job).  This initial client can not be shared across threads, but you can certainly either put it behind a synchronized gate, or, fire up a whole bunch for each one of your threads, as you prefer.  (Next update should have either a service doing just that, or, the aynch client supporting queuing semantics - invoke, and get callbacks.)
+JRedis is a specification and a reference implementation.  Currently there is one implementation providing (blocking semantics on method calls) for a passive client (that uses the caller's thread to do its job).  
+
+This initial client can not be shared across threads, but you can certainly either put it behind a synchronized gate, or, fire up a whole bunch for each one of your threads, as you prefer.  
+
+*If you do share an instance from behind a facade, do note* that redis connections are stateful, and if you plan on using the facility to switch between dbs using jredis.select(db) [redis SELECT db] it is almost guaranteed to be bad idea to share a single connection across multiple threads.  However, if you will not be using select, then there should be no problems with sharing a single connection from behind a facade.  If switching dbs is required, then you will need to create dedicated JRedis instances per thread.  (This is very much a server issue and not JRedis specific.)
 
 Alright, that said, here is a barebones JRedis app -- HelloAgain:
 
