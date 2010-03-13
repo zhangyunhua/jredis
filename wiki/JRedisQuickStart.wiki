@@ -175,7 +175,7 @@ Here's how we get our objects back using `Encode.decode(byte[] bytes)`, which wh
 
 And there you are.
 
-`byte[]`s go in, and `byte[]`s come out.  If you want to conver `Number` and `String`, check out the methods in `Encode` that help out here.  
+`byte[]`s go in, and `byte[]`s come out.  If you want to convert to `Number` and `String`, check out the methods in `DefaultCodec` class.  
 
 And its as simple as that.
 
